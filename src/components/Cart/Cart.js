@@ -1,16 +1,30 @@
 import React from 'react';
 
+
 const Cart = (props) => {
     const cart = props.cartItems;
+    console.log(cart);
 
-//    const total = cart.reduce((product,total) => total + product.price,0);
-//    console.log(total);
-   let total = 0;
-   for (let i = 0; i < cart.length; i++) {
-       const element = cart[i];
-       total = total + element.price;
+    const total  = cart.reduce((total,product) => total + product.price * product.quantity,0);
+    console.log(total);
+
+    // let total;
+    // if(cart.quantity){
+    //     total  = cart.reduce((total,product) => total + product.price * product.quantity,0);
+
+    // }
+    // else{
+    //      total  = cart.reduce((total,product) => total + product.price ,0);
+    // }
+
+
+   console.log(total);
+//    let total = 0;
+//    for (let i = 0; i < cart.length; i++) {
+//        const element = cart[i];
+//        total = total + element.price;
        
-   }
+//    }
    console.log(total);
 
 const formatNumber = (num) =>{
@@ -41,6 +55,14 @@ const formatNumber = (num) =>{
         <p>Total before text: ${ formatNumber( total + shipping)}</p>
         <p>Estimated tax: ${tax}</p>
         <p>Order Total: ${grandTotal}</p>
+
+       
+
+        {
+            props.children
+        }
+
+        
         
 
 

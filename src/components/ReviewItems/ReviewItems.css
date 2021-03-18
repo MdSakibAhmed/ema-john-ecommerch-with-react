@@ -1,0 +1,11 @@
+.reviewItems{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    column-gap: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+    border: 1px solid lightgray;
+    padding: 20px;
+}
